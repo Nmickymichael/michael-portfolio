@@ -48,7 +48,7 @@ async function loadGitHubProjects() {
 
     const repositories = await response.json();
     const projects = repositories
-      .filter(repo => !repo.fork && !repo.archived && repo.name !== 'classtrack-student-attendance')
+      .filter(repo => !repo.fork && !repo.archived && !['classtrack-student-attendance', 'mickey-moneymakingways-2025'].includes(repo.name))
       .sort((a, b) => new Date(b.pushed_at || b.updated_at) - new Date(a.pushed_at || a.updated_at));
 
     grid.replaceChildren();
