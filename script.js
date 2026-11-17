@@ -48,7 +48,7 @@ async function loadGitHubProjects() {
 
     const repositories = await response.json();
     const projects = repositories
-      .filter(repo => !repo.fork && !repo.archived && !['classtrack-student-attendance', 'mickey-moneymakingways-2025'].includes(repo.name))
+      .filter(repo => !repo.fork && !repo.archived && repo.name !== 'classtrack-student-attendance')
       .sort((a, b) => new Date(b.pushed_at || b.updated_at) - new Date(a.pushed_at || a.updated_at));
 
     grid.replaceChildren();
@@ -66,11 +66,11 @@ async function loadGitHubProjects() {
       titleLink.href = repo.html_url;
       titleLink.target = '_blank';
       titleLink.rel = 'noopener noreferrer';
-      titleLink.textContent = repo.name.replace(/[-_]/g, ' ');
+      titleLink.textContent = repo.name === 'mickey-moneymakingways-2025' ? 'Money Making 2026' : repo.name.replace(/[-_]/g, ' ');
       title.append(titleLink);
 
       const description = document.createElement('p');
-      description.textContent = repo.description || 'A public project on GitHub. Explore the repository to learn more.';
+      description.textContent = repo.name === 'mickey-moneymakingways-2025' ? 'A responsive, dark-mode-enabled guide showcasing 10 practical ways to make money online in 2026, with curated global platforms, useful resources and an interactive FAQ.' : (repo.description || 'A public project on GitHub. Explore the repository to learn more.');
 
       const meta = document.createElement('div');
       meta.className = 'repo-meta';
