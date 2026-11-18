@@ -20,3 +20,12 @@
 
 /* Money Making 2026 featured-project preview */
 .money-preview{background:linear-gradient(135deg,#111a2e,#1d3150);color:#f2f6ff;min-height:270px}.money-preview-content{position:relative;isolation:isolate;min-height:235px;padding:34px 30px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;overflow:hidden}.money-preview-kicker{font-size:9px;letter-spacing:2px;color:#6ee7c5;font-weight:700}.money-preview-content strong{font:700 clamp(25px,3vw,37px)/1.12 'Space Grotesk',sans-serif;letter-spacing:-1.4px;margin:13px 0 17px}.money-preview-pill{font-size:10px;font-weight:700;color:#101629;background:linear-gradient(100deg,#9ba8ff,#64e5c4);padding:8px 11px;border-radius:7px}.money-preview-orbit{position:absolute;z-index:-1;width:190px;height:190px;border:1px solid rgba(110,231,197,.23);border-radius:50%;right:-25px;bottom:-90px;box-shadow:0 0 0 25px rgba(110,231,197,.04),0 0 0 55px rgba(110,231,197,.035)}
+
+
+/* Restored three-channel contact links */
+.contact-details{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:18px auto 0;color:var(--muted);font-size:12px}
+.contact-details a{color:var(--accent-2);font-weight:600}
+.contact-details a:hover,.footer-contact a:hover{color:var(--accent)}
+.footer-contact{display:flex;align-items:center;gap:16px}
+.footer-contact a{font-size:11px;color:var(--muted);font-weight:600}
+@media(max-width:620px){.footer-contact{order:4;width:100%;justify-content:flex-start;gap:20px}.contact-details{font-size:11px}}
